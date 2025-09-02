@@ -1,0 +1,12 @@
+:root{
+  --bg: #050707;
+  --fg: #e7f1f1;
+  --muted: #9bb1b1;
+
+  --brand-1: #35e5cf;      /* teal */
+  --brand-2: #00c2ff;      /* aqua */
+  --accent-grad: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+
+  --radius: 14px;
+  --shadow-1: 0 10px 30px rgba(0,0,0,.35);
+}

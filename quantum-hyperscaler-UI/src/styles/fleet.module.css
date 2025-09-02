@@ -1,0 +1,82 @@
+.wrap{ padding: 18px 8px 42px; }
+.header{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 16px; margin-bottom: 18px;
+}
+.sub{ color: var(--muted); margin: 6px 0 0; }
+
+.controls{ display:flex; align-items:center; gap:10px; }
+.uploadBtn{
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  padding: 8px 12px; border-radius: 10px; cursor: pointer;
+}
+.uploadBtn input{ position:absolute; inset:0; opacity:0; cursor:pointer; }
+
+.play, .reset{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 8px 12px; border-radius: 10px; border:0; cursor:pointer; font-weight: 600;
+}
+.play{ background: #1ccdb4; color:#062622; }
+.play[disabled]{ opacity:.6; cursor:not-allowed; }
+.reset{ background: rgba(255,255,255,.06); color: var(--fg); border: 1px solid rgba(255,255,255,.12); }
+
+.flow{
+  margin-top: 10px;
+  display:flex; align-items:flex-start; gap: 6px;
+  overflow-x:auto; padding: 14px 6px;
+}
+.stepWrap{ display:flex; flex-direction:column; align-items:center; gap:6px; min-width: 220px; }
+.time{ color: var(--muted); font-size: .9rem; min-height: 1.2rem; }
+
+.step{
+  display:flex; align-items:center; gap:10px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 12px 14px; border-radius: 14px; min-height: 64px; min-width: 220px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.iconBubble{
+  width: 36px; height: 36px; border-radius: 999px;
+  display:flex; align-items:center; justify-content:center;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+}
+.label{ font-weight: 600; }
+
+.step.active{
+  box-shadow: 0 0 0 2px color-mix(in oklab, #1ccdb4 60%, transparent);
+  border-color: color-mix(in oklab, #1ccdb4 70%, rgba(255,255,255,.12));
+  transform: translateY(-2px);
+}
+.step.active .iconBubble{
+  background: color-mix(in oklab, #1ccdb4 18%, transparent);
+  border-color: color-mix(in oklab, #1ccdb4 55%, rgba(255,255,255,.12));
+}
+
+.step.done{
+  border-color: rgba(255,255,255,.16);
+  opacity: .9;
+}
+
+.connector{
+  width: 120px; height: 24px; flex: 0 0 auto;
+  margin: 20px 0 0 0;
+  /* arrows must be white per requirement */
+}
+
+.footer{
+  margin-top: 16px;
+  display:flex; align-items:center; gap:10px;
+}
+.progressOuter{
+  flex: 1; height: 8px; border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  overflow: hidden; border: 1px solid rgba(255,255,255,.10);
+}
+.progressInner{
+  height:100%; background: #1ccdb4;
+  width: 0%;
+}
+.progressText{ color: var(--muted); min-width: 120px; text-align: right; }

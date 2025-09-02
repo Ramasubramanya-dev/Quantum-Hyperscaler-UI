@@ -1,0 +1,945 @@
+/* home.module.css - Modern UI Design System */
+
+/* ===========================
+   CSS Variables & Design Tokens
+   =========================== */
+:root {
+  /* Colors */
+  --primary: #00e5ff;
+  --primary-dark: #00acc1;
+  --primary-light: #6effff;
+  --secondary: #1de9b6;
+  --accent: #00bcd4;
+  
+  /* Dark theme colors */
+  --bg-primary: #0a0e0f;
+  --bg-secondary: #0f1517;
+  --bg-tertiary: #141a1c;
+  --bg-card: #1a2326;
+  --bg-hover: #1f282b;
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b8c3c8;
+  --text-muted: #7a8a90;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #00e5ff 0%, #1de9b6 100%);
+  --gradient-accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-dark: linear-gradient(180deg, rgba(10,14,15,0) 0%, #0a0e0f 100%);
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Typography */
+  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Animations */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.2);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.25);
+  --shadow-glow: 0 0 40px rgba(0,229,255,0.15);
+  
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* ===========================
+   Global Styles
+   =========================== */
+.mainWrapper {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) var(--space-lg);
+  background: radial-gradient(ellipse at top, rgba(0,229,255,0.05) 0%, transparent 50%),
+              var(--bg-primary);
+}
+
+.heroContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.heroContent {
+  animation: fadeInUp 0.8s ease;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(0,229,255,0.1);
+  border: 1px solid rgba(0,229,255,0.2);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-lg);
+  font-size: 0.875rem;
+  color: var(--primary);
+  animation: pulse 2s infinite;
+}
+
+.badgeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.02em;
+}
+
+.gradientText {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.impactText {
+  display: block;
+  color: var(--text-primary);
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+}
+
+.heroCTA {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--gradient-primary);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl), 0 0 60px rgba(0,229,255,0.3);
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-base);
+}
+
+.primaryButton:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  padding: var(--space-sm) var(--space-lg);
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.secondaryButton:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.trustBadges {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.trustIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--primary);
+}
+
+/* Hero Visual */
+.heroVisual {
+  position: relative;
+  animation: fadeIn 1s ease 0.3s both;
+}
+
+.splineContainer {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(0,229,255,0.05) 0%, transparent 70%);
+}
+
+.loadingOrb {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.orbPulse {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(0,229,255,0.3);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  cursor: pointer;
+  transition: border-color var(--transition-base);
+  bottom: calc(var(--space-xl) + 64px);
+}
+
+.scrollIndicator:hover {
+  border-color: var(--primary);
+}
+
+.scrollDot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+/* ===========================
+   Solutions Section
+   =========================== */
+.solutions {
+  padding: var(--space-3xl) var(--space-lg);
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.sectionLabel {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(0,229,255,0.1);
+  border-radius: var(--radius-full);
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+.sectionDescription {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.solutionCard {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.solutionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.solutionCard:hover {
+  transform: translateY(-4px);
+  background: var(--bg-hover);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.solutionCard:hover::before {
+  transform: scaleX(1);
+}
+
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.cardIcon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--bg-primary);
+}
+
+.solutionCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.solutionCard p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap var(--transition-base);
+}
+
+.cardLink:hover {
+  gap: var(--space-sm);
+}
+
+.cardLink svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===========================
+   Quantum Section
+   =========================== */
+.quantum {
+  padding: var(--space-3xl) var(--space-lg);
+  background: radial-gradient(ellipse at bottom, rgba(29,233,182,0.05) 0%, transparent 50%),
+              var(--bg-secondary);
+}
+
+.quantumContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quantumHeader {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.quantumTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.quantumTitle span {
+  display: block;
+}
+
+.quantumHighlight {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.quantumGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.quantumCard {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-tertiary) 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.quantumCard::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,229,255,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.quantumCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.quantumCard:hover::after {
+  opacity: 1;
+}
+
+.quantumCardIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,229,255,0.1);
+  border: 1px solid rgba(0,229,255,0.2);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.quantumCardIcon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
+}
+
+.quantumCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.quantumCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   Industry Verticals Section
+   =========================== */
+.verticals {
+  padding: var(--space-3xl) var(--space-lg);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.verticalsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.verticalCard {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.verticalCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(0,229,255,0.05) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.verticalCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl), 0 20px 40px rgba(0,229,255,0.1);
+}
+
+.verticalCard:hover::before {
+  opacity: 1;
+}
+
+.verticalIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-base);
+}
+
+.verticalCard:hover .verticalIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.verticalIcon svg {
+  width: 32px;
+  height: 32px;
+  color: var(--bg-primary);
+}
+
+.verticalCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.verticalCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.verticalStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  z-index: 1;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===========================
+   Applications Section
+   =========================== */
+.applications {
+  padding: var(--space-3xl) var(--space-lg);
+  background: radial-gradient(ellipse at center, rgba(103,126,234,0.05) 0%, transparent 50%),
+              var(--bg-primary);
+}
+
+.applicationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.appCard {
+  position: relative;
+  height: 320px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.appCard:hover {
+  transform: scale(1.02);
+}
+
+.appImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.appCard:hover .appImage {
+  transform: scale(1.1);
+}
+
+.appOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+  transition: background var(--transition-base);
+}
+
+.appCard:hover .appOverlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.95) 100%);
+}
+
+.appContent h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.appContent p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+  opacity: 0.9;
+}
+
+.appTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(0,229,255,0.1);
+  border: 1px solid rgba(0,229,255,0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.tag:hover {
+  background: rgba(0,229,255,0.2);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Animations
+   =========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 1024px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .heroContent {
+    order: 2;
+  }
+  
+  .heroVisual {
+    order: 1;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .splineContainer {
+    height: 400px;
+  }
+  
+  .heroCTA {
+    justify-content: center;
+  }
+  
+  .trustBadges {
+    justify-content: center;
+  }
+  
+  .heroDescription {
+    margin: 0 auto var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-xl) var(--space-md);
+  }
+  
+  .heroTitle {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .heroCTA {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .trustBadges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quantumGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .verticalsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .applicationsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .splineContainer {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .heroDescription {
+    font-size: 1rem;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .verticalStats {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+}
+
+/* ===========================
+   Dark Mode Enhancements
+   =========================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.4);
+    --shadow-xl: 0 16px 48px rgba(0,0,0,0.5);
+  }
+}
+
+/* ===========================
+   Performance Optimizations
+   =========================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================
+   Accessibility Improvements
+   =========================== */
+.solutionCard:focus-visible,
+.quantumCard:focus-visible,
+.verticalCard:focus-visible,
+.appCard:focus-visible,
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .solutionCard,
+  .quantumCard,
+  .verticalCard {
+    border: 2px solid var(--text-primary);
+  }
+  
+  .primaryButton {
+    border: 2px solid var(--text-primary);
+  }
+}
+
+/* Container can just be inline so wrapping works naturally */
+.impactText {
+  display: inline;
+  line-height: 1.1;
+}
+
+/* The typed text: keep newlines and wrap */
+.typeLine {
+  white-space: pre-line;
+  position: relative; /* for good measure */
+}
+
+/* Caret that follows the text content exactly */
+.typeLine::after {
+  content: "|";
+  margin-left: 2px;       /* a tiny gap from the last letter */
+  animation: caretBlink 1s steps(2, end) infinite;
+}
+
+/* Blink animation */
+@keyframes caretBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .typeLine::after { animation: none; }
+}
