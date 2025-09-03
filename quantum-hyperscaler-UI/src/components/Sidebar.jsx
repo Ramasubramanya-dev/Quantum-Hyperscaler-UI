@@ -22,10 +22,10 @@ export default function Sidebar() {
 
       <div style={{marginTop:12, fontWeight:600, opacity:.9}}>Optimization Suite</div>
       <div style={{marginLeft:8}}>
-        {link(`${BASE}/optimization/fleet-capacity`, "Fleet & Capacity Planning (CVRP)")}
+        {link(`${BASE}/optimization/fleet-capacity`, "Fleet Planning (CVRP)")}
+        {link(`${BASE}/optimization/resource-allocation`, "Resource Planning & Allocation (Knapsack)")}
         {link(`${BASE}/optimization/route-optimization`, "Route Optimization (TSP)")}
         {link(`${BASE}/optimization/network-partitioning`, "Network Partitioning (Max-Cut)")}
-        {link(`${BASE}/optimization/resource-allocation`, "Resource Allocation (Knapsack)")}
         {link(`${BASE}/optimization/packing-scheduling`, "Packing and Scheduling")}
       </div>
 

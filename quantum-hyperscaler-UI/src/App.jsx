@@ -8,7 +8,7 @@ import ConsoleEntry from "./pages/ConsoleEntry.jsx";
 import ConsoleLayout from "./app/ConsoleLayout.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 
-import FleetCapacity from "./pages/optimization/FleetCapacity.jsx";
+import FleetCapacity from "./pages/optimization/FleetPlanning/FleetPlanning.jsx";
 import RouteOptimization from "./pages/optimization/RouteOptimization.jsx";
 import NetworkPartitioning from "./pages/optimization/NetworkPartitioning.jsx";
 import ResourceAllocation from "./pages/optimization/ResourceAllocation.jsx";

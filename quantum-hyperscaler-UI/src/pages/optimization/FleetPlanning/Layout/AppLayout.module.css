@@ -1,0 +1,60 @@
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--left-col) 1fr var(--right-col);
+  gap: var(--gap, 12px);
+  height: calc(100vh - 64px);      /* << concrete height */
+  min-height: 0;                   /* allow children to size themselves */
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center horizontally */
+  justify-content: center; /* center vertically */
+  background: var(--bg);
+  padding: 20px; /* space around the whole thing */
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  padding: var(--gap);
+
+  /* Limit size and center the content area */
+  max-width: clamp(1600px, 94vw, 2400px);
+  max-height: 90vh;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  background: #0c0c0c;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  min-height: 40px;
+}
+
+.header {
+  /* existing header styles remain */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 56px; /* ensure room for the mini orbit */
+}
+
+.center {
+  position: relative;
+  min-height: 300px;               /* safety net */
+  height: 100%;                    /* << important */
+  overflow: hidden;
+  border-radius: var(--radius, 16px);
+}

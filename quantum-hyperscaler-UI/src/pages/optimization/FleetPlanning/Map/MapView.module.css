@@ -1,0 +1,22 @@
+/* src/pages/optimization/FleetPlanning/Map/MapView.module.css */
+.card {
+  height: 100%;
+  width: 100%;
+  background: #0d0d0f;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Make MapContainer fill the card */
+.map {
+  position: absolute;
+  inset: 0;
+}
+
+/* Leaflet’s internal container also needs explicit size */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
